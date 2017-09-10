@@ -7,7 +7,7 @@
     "oauth"
   ],
   "scripts": {
-      "start": "node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   "author": "Michael Aufreiter",
   "contributors": [],
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "~3.16.0"
   },
   "engines": {
