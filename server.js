@@ -57,15 +57,6 @@ app.use(bodyParser.urlencoded({extended: false, limit: '5mb'}));
 //
 
 // Convenience for allowing CORS on routes - GET only
-// app.all('*', function (req, res, next) {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-//   res.header('Access-Control-Allow-Headers', 'Content-Type');
-//   next();
-// });
-
-
-// Convenience for allowing CORS on routes - GET only
 app.all('*', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
@@ -74,108 +65,38 @@ app.all('*', function (req, res, next) {
 });
 
 
-var team  = [
-  {
-    id: 1,
-    name: 'John Doe',
-    sex: 'male',
-    weight: 60,
-    height: 177
-  },
-  {
-    id: 2,
-    name: 'John Doe1',
-    sex: 'male',
-    weight: 70,
-    height: 187
-  },
-  {
-    id: 3,
-    name: 'John Doe2',
-    sex: 'male',
-    weight: 80,
-    height: 197
-  },
-  {
-    id: 4,
-    name: 'Joe Doe',
-    sex: 'female',
-    weight: 80,
-    height: 167
-  },
-  {
-    id: 5,
-    name: 'Joe Doe1',
-    sex: 'female',
-    weight: 90,
-    height: 157
-  },
-  {
-    id: 6,
-    name: 'Ivana Alot1',
-    sex: 'female',
-    weight: 50,
-    height: 57
-  },
-  {
-    id: 7,
-    name: 'Ivana Alot7',
-    sex: 'female',
-    weight: 50,
-    height: 57
-  },
-  {
-    id: 8,
-    name: 'Ivana Alot8',
-    sex: 'female',
-    weight: 50,
-    height: 57
-  },
-  {
-    id: 9,
-    name: 'Ivana Alot9',
-    sex: 'female',
-    weight: 50,
-    height: 57
-  },
-  {
-    id: 10,
-    name: 'Ivana Alot10',
-    sex: 'female',
-    weight: 50,
-    height: 57
-  }
-
-];
-
-
-const planet =[
-  {id: 1, name: 'Mercury'},
-  {id: 2, name: 'Venus'},
-  {id: 3, name: 'Earth'},
-  {id: 4, name: 'Mars'},
-  {id: 5, name: 'Jupiter'},
-  {id: 6, name: 'Saturn'},
-  {id: 7, name: 'Neptun'},
-  {id: 8, name: 'Pluton'},
-  {id: 9, name: 'Rambler'},
-  {id: 10, name: 'Yandex'}
-
-];
-
-
 app.get("/pcs/api/v1/designers/:handoverkey", function(req, res){
   console.log('get designer api for handover key', req.params.handoverkey);
-  var data = {"HandoverKey":"1b283d18-c2bf-4ba4-990a-63d5959f2750","FI":{"Id":267,"Name":"FalabellaChile"},"Subscriber":{"Id":1,"Name":"FalabellaChile"},"Product":{"Id":1,"Name":"PublicSite"},"Orientation":{"Type":"h","ShowButton":false,"ProxyHandoverKey":""},"Language":"es-ES","DesignerType":"Standard","Desktop":{"Top":0,"Left":0,"Bottom":153,"Right":241},"Printer":{"Resolution":300,"Size":{"Width":1013,"Height":638},"Bleed":{"Width":0.25,"Height":0.25},"Card":{"Width":1012.5,"Height":637.5},"Id":11,"Name":"MagTek EC1000"},"UploadImage":{"Allowed":true,"MinSize":{"Image":{"Width":405,"Height":405},"Logo":{"Width":405,"Height":405}},"MaxSize":{"Size":10485760,"Width":10000,"Height":10000}},"Coverage":{"Image":{"Type":"Error","LayerCategory":"Image","Top":0,"Left":0,"Bottom":153,"Right":241},"Text":null,"Logo":null},"TextOnImage":{"Enabled":false,"Fonts":null,"Top":null,"Left":null,"Bottom":null,"Right":null},"KeepAlive":{"Enabled":false,"URL":null,"Timing":0},"Galleries":{"Enabled":true,"Pagination":false,"URL":"http://localhost:9999/PCS/API/v1/designers/1b283d18-c2bf-4ba4-990a-63d5959f2750/ImageCategories"},"DesignTemplate":{"X":1013,"Y":638,"Id":11870,"UrlSmall":"http://localhost:9999/PCS/API/v1/designers/1b283d18-c2bf-4ba4-990a-63d5959f2750/Templates/11870.png?size=Small","UrlMedium":"http://localhost:9999/PCS/API/v1/designers/1b283d18-c2bf-4ba4-990a-63d5959f2750/Templates/11870.png?size=Medium","UrlLarge":"http://localhost:9999/PCS/API/v1/designers/1b283d18-c2bf-4ba4-990a-63d5959f2750/Templates/11870.png"},"DataCapture":{"HasCompetition":false,"CustomDataCaptureEnabled":false,"Url":"http://localhost:9999/PCS/API/v1/designers/1b283d18-c2bf-4ba4-990a-63d5959f2750/CustomDataFields","EmailCapture":"Disabled","HideEmailCapture":false,"AutoPublicImage":"Disabled"},"Handback":{"Url":"https://desa4.bancofalabella.cl/tarjeta-personalizar/start","Method":"post","HandbackEmailAddress":true,"HandbackWhiteList":[],"URLDecode":false},"Skin":{"Id":81,"Name":"Falabella","ThumbnailFilename":"classic_white.jpg","SwfFilename":"Falabella","Default":false,"SkinType":"HTML5Plugin"},"Tracking":false};
+  var data = {"HandoverKey":"7f13608b-ac66-4da0-8ce6-29a15fb5d770","FI":{"Id":334,"Name":"HTML5"},"Subscriber":{"Id":1,"Name":"HTML5 Test 1"},"Product":{"Id":18,"Name":"istate"},"Orientation":{"Type":"h","ShowButton":false,"ProxyHandoverKey":""},"Language":"en-US","DesignerType":"Standard","Desktop":{"Top":0,"Left":0,"Bottom":153,"Right":241},"Printer":{"Resolution":300,"Size":{"Width":1050,"Height":672},"Bleed":{"Width":18.75,"Height":17.25},"Card":{"Width":1012.5,"Height":637.5},"Id":1,"Name":"Datacard Artista"},"UploadImage":{"Allowed":true,"MinSize":{"Image":{"Width":420,"Height":420},"Logo":{"Width":420,"Height":420}},"MaxSize":{"Size":10485760,"Width":10000,"Height":10000}},"Coverage":{"Image":{"Type":"Warning","LayerCategory":"Image","Top":-5,"Left":-5,"Bottom":158,"Right":246},"Text":null,"Logo":null},"TextOnImage":{"Enabled":true,"Fonts":{"URL":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Fonts"},"Top":14,"Left":28,"Bottom":98,"Right":169},"KeepAlive":{"Enabled":false,"URL":null,"Timing":0},"Galleries":{"Enabled":true,"Pagination":false,"URL":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/ImageCategories"},"DesignTemplate":{"X":1013,"Y":638,"Id":4426,"UrlSmall":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Templates/4426.png?size=Small","UrlMedium":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Templates/4426.png?size=Medium","UrlLarge":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Templates/4426.png"},"DataCapture":{"HasCompetition":false,"CustomDataCaptureEnabled":false,"Url":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/CustomDataFields","EmailCapture":"Disabled","HideEmailCapture":false,"AutoPublicImage":"Disabled"},"Handback":{"Url":"http://localhost:9999/PCS/Designer/Exit.aspx","Method":"get","HandbackEmailAddress":true,"HandbackWhiteList":[],"URLDecode":false},"Skin":{"Id":72,"Name":"Istate","ThumbnailFilename":"classic_white.jpg","SwfFilename":"IState","Default":false,"SkinType":"HTML5Plugin"},"Tracking":true};
   res.json(data);
 });
 
-app.get("/pcs/api/v1/designers/:handoverkey/Templates/:imgId", function(req, res){
-  console.log('serve template image ', req.params.imgId);
-  var img = fs.readFileSync('./img/11870.png');
-  res.writeHead(200, {'Content-Type': 'image/png' });
+app.get("/API/designers/:handoverkey/ImageCategories", function(req, res){
+  console.log('get designer api for handover key', req.params.handoverkey);
+  var data = [{"Id":814,"Name":"Default","Url":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/ImageCategories/814","Locked":false,"Size":9,"ImageType":""},{"Id":815,"Name":"Landscapes","Url":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/ImageCategories/815","Locked":true,"Size":10,"ImageType":""},{"Id":975,"Name":"Locked","Url":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/ImageCategories/975","Locked":true,"Size":3,"ImageType":""}];
+  res.json(data);
+});
+
+app.get("/API/designers/:handoverkey/ImageCategories/:id", function(req, res){
+  console.log('get designer api for handover key', req.params.handoverkey);
+  var data = {"Id":814,"Name":"Default","Locked":false,"TextEnabled":true,"PriceCode":"","KnockoutCategory":false,"Images":[{"Name":"image 1","Id":5939,"LimitedEdition":false,"LimitedEditionCount":0,"Locked":false,"TextEnabled":true,"ImageSource":{"Name":"HTML5","Code":"HTML5","Id":212},"PriceCode":"","Tags":"","Metadata":"","Description":"","Format":1,"LargeImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5939.Jpg","ReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5939.Jpg?size=Review","LargeReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5939.Jpg?size=LargeReview","ThumbNail":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5939.Jpg?size=Thumbnail"},{"Name":"Robot","Id":6837,"LimitedEdition":false,"LimitedEditionCount":0,"Locked":true,"TextEnabled":true,"ImageSource":{"Name":"HTML5","Code":"HTML5","Id":212},"PriceCode":"","Tags":"","Metadata":"","Description":"","Format":1,"LargeImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/6837.Jpg","ReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/6837.Jpg?size=Review","LargeReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/6837.Jpg?size=LargeReview","ThumbNail":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/6837.Jpg?size=Thumbnail"},{"Name":"image 12","Id":5950,"LimitedEdition":false,"LimitedEditionCount":0,"Locked":false,"TextEnabled":true,"ImageSource":{"Name":"HTML5","Code":"HTML5","Id":212},"PriceCode":"","Tags":"","Metadata":"","Description":"","Format":1,"LargeImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5950.Jpg","ReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5950.Jpg?size=Review","LargeReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5950.Jpg?size=LargeReview","ThumbNail":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5950.Jpg?size=Thumbnail"},{"Name":"image 13","Id":5951,"LimitedEdition":false,"LimitedEditionCount":0,"Locked":false,"TextEnabled":true,"ImageSource":{"Name":"HTML5","Code":"HTML5","Id":212},"PriceCode":"","Tags":"","Metadata":"","Description":"","Format":1,"LargeImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5951.Jpg","ReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5951.Jpg?size=Review","LargeReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5951.Jpg?size=LargeReview","ThumbNail":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5951.Jpg?size=Thumbnail"},{"Name":"image 14","Id":5952,"LimitedEdition":false,"LimitedEditionCount":0,"Locked":false,"TextEnabled":true,"ImageSource":{"Name":"HTML5","Code":"HTML5","Id":212},"PriceCode":"","Tags":"","Metadata":"","Description":"","Format":1,"LargeImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5952.Jpg","ReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5952.Jpg?size=Review","LargeReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5952.Jpg?size=LargeReview","ThumbNail":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5952.Jpg?size=Thumbnail"},{"Name":"image 15","Id":5953,"LimitedEdition":false,"LimitedEditionCount":0,"Locked":false,"TextEnabled":true,"ImageSource":{"Name":"HTML5","Code":"HTML5","Id":212},"PriceCode":"","Tags":"","Metadata":"","Description":"","Format":1,"LargeImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5953.Jpg","ReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5953.Jpg?size=Review","LargeReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5953.Jpg?size=LargeReview","ThumbNail":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5953.Jpg?size=Thumbnail"},{"Name":"image 18","Id":5956,"LimitedEdition":false,"LimitedEditionCount":0,"Locked":false,"TextEnabled":true,"ImageSource":{"Name":"HTML5","Code":"HTML5","Id":212},"PriceCode":"","Tags":"","Metadata":"","Description":"","Format":1,"LargeImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5956.Jpg","ReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5956.Jpg?size=Review","LargeReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5956.Jpg?size=LargeReview","ThumbNail":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5956.Jpg?size=Thumbnail"},{"Name":"image 17","Id":5955,"LimitedEdition":false,"LimitedEditionCount":0,"Locked":false,"TextEnabled":true,"ImageSource":{"Name":"HTML5","Code":"HTML5","Id":212},"PriceCode":"","Tags":"","Metadata":"","Description":"","Format":1,"LargeImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5955.Jpg","ReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5955.Jpg?size=Review","LargeReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5955.Jpg?size=LargeReview","ThumbNail":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5955.Jpg?size=Thumbnail"},{"Name":"image 16","Id":5954,"LimitedEdition":false,"LimitedEditionCount":0,"Locked":false,"TextEnabled":true,"ImageSource":{"Name":"HTML5","Code":"HTML5","Id":212},"PriceCode":"","Tags":"","Metadata":"","Description":"","Format":1,"LargeImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5954.Jpg","ReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5954.Jpg?size=Review","LargeReviewImage":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5954.Jpg?size=LargeReview","ThumbNail":"http://localhost:9999/API/designers/7f13608b-ac66-4da0-8ce6-29a15fb5d770/Images/5954.Jpg?size=Thumbnail"}]};
+  res.json(data);
+});
+
+
+app.get('/API/designers/:handoverkey/Templates/:image', function(req, res) {
+  console.log('serve  image ', req.params.image);
+  var img = fs.readFileSync('./img/' + req.params.image);
+  res.writeHead(200, {'Content-Type': 'image/jpeg' });
   res.end(img, 'binary');
 });
+  app.get('/API/designers/:handoverkey/Images/:image', function(req, res) {
+  console.log('serve  image ', req.params.image);
+  var img = fs.readFileSync('./img/' + req.params.image);
+  res.writeHead(200, {'Content-Type': 'image/jpeg' });
+  res.end(img, 'binary');
+});
+
 
 
 app.post('/pcs/api/v1/designers/submit/:imgId', function(req, res){
