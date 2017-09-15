@@ -100,19 +100,25 @@ app.get('/API/designers/:handoverkey/Templates/:image', function(req, res) {
 
 
 app.post('/pcs/api/v1/designers/submit/:imgId', function(req, res){
-  console.log('saving pictur with id ', req.params.imgId);
+  console.log('saving picture with id ', req.params.imgId);
 
   var fileName = req.params.imgId + '.png';
 
+
+  var fileNameWithTemaplte = req.params.imgId + '-template.png';
   //var imageBuffer= decodeBase64Image(base64Data);
 
   var base64Data = req.body.img.replace(/^data:image\/png;base64,/, "");
+
+  var base64DataTemplate = req.body.imgWithTemplate.replace(/^data:image\/png;base64,/, "");
 
   fs.writeFile(fileName, base64Data, 'base64', function(err) {
     if (err) {
       console.log(err);
     } else {
-      console.log('file saved');
+      fs.writeFile(fileNameWithTemaplte, base64DataTemplate, 'base64', function(err){
+        console.log('file saved');
+      });
     }
     res.json({result: 'ok'});
   });
